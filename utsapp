@@ -1,0 +1,48 @@
+package uts_pbo;
+import java.util.Scanner;
+
+public class UtsApp{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Nosatu nosatu = new Nosatu();
+        Nodua nodua = new Nodua();
+
+        String jawaban = "Y";
+
+        while (jawaban.equalsIgnoreCase("Y")) {
+            System.out.print("NIM           : ");
+            nosatu.setNim(scanner.nextLine());
+
+            System.out.print("Nama          : ");
+            nosatu.setNama(scanner.nextLine());
+
+            System.out.print("Jurusan       : ");
+            nosatu.setJurusan(scanner.nextLine());
+
+            System.out.print("Nilai Tugas   : ");
+            nodua.setNilaiTugas(scanner.nextDouble());
+
+            System.out.print("Nilai UTS     : ");
+            nodua.setNilaiUTS(scanner.nextDouble());
+
+            System.out.print("Nilai UAS     : ");
+            nodua.setNilaiUAS(scanner.nextDouble());
+
+            System.out.println("NIM : " + nosatu.getNim());
+            System.out.println("Nama : " + nosatu.getNama());
+            System.out.println("Jurusan : " + nosatu.getJurusan());
+            System.out.println("Nilai Tugas : " + nodua.getNilaiTugas());
+            System.out.println("Nilai UTS : " + nodua.getNilaiUTS());
+            System.out.println("Nilai UAS : " + nodua.getNilaiUAS());
+            System.out.println("Nilai Akhir : " + nodua.getNilaiAkhir());
+            System.out.println("Grade Nilai: " + nodua.hitungGradeNilai());
+            
+
+            System.out.print("Apakah Anda ingin memasukkan data lagi (Y/N) ? ");
+            scanner.nextLine();
+            jawaban = scanner.nextLine();
+        }
+
+        scanner.close();
+    }
+}
