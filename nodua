@@ -1,0 +1,55 @@
+package uts_pbo;
+public class Nodua extends Nosatu
+{
+    private double nilaiTugas;
+    private double nilaiUTS;
+    private double nilaiUAS;
+    private double nilaiAkhir;
+
+    public void setNilaiTugas(double nilaiTugas){
+        this.nilaiTugas = nilaiTugas;
+    }
+
+    public void setNilaiUTS(Double nilaiUTS){
+        this.nilaiUTS = nilaiUTS;
+    }
+
+    public void setNilaiUAS(double nilaiUAS){
+        this.nilaiUAS = nilaiUAS;
+    }
+
+    public void setNilaiAkhir(double nilaiAkhir){
+        this.nilaiAkhir = nilaiAkhir;
+    }
+
+    public double getNilaiTugas(){
+        return nilaiTugas;
+    }
+
+    public double getNilaiUTS(){
+        return nilaiUTS;
+    }
+
+    public double getNilaiUAS(){
+        return nilaiUAS;
+    }
+
+    public double getNilaiAkhir(){
+        return (nilaiTugas * 0.3) + (nilaiUTS * 0.3) + (nilaiUAS * 0.4);
+    }
+
+    public String hitungGradeNilai()
+    {
+        if (getNilaiAkhir() >= 80) {
+            return "A";
+        } else if (getNilaiAkhir() >= 70) {
+            return "B";
+        } else if (getNilaiAkhir() >= 60) {
+            return "C";
+        } else if (getNilaiAkhir() >= 50) {
+            return "D";
+        } else {
+            return "E";
+        }
+    }
+}
